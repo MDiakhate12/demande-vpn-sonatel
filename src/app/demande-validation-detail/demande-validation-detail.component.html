@@ -47,21 +47,21 @@
 
             <mat-list-item>
                 <mat-icon color="warn">how_to_reg</mat-icon>
-                <mat-slide-toggle labelPosition="before" [style.color]="color"
+                <mat-slide-toggle labelPosition="before"
                     [checked]="demande?.validation_hierarchique" disabled>Supérieur
                 </mat-slide-toggle>
             </mat-list-item>
 
             <mat-list-item>
                 <mat-icon color="warn">security</mat-icon>
-                <mat-slide-toggle labelPosition="before" [style.color]="color" [checked]="demande?.validation_securite"
+                <mat-slide-toggle labelPosition="before" [checked]="demande?.validation_securite"
                     disabled>Sécurité
                 </mat-slide-toggle>
             </mat-list-item>
 
             <mat-list-item>
                 <mat-icon color="warn">rss_feed</mat-icon>
-                <mat-slide-toggle labelPosition="before" [style.color]="color" [checked]="demande?.validation_admin"
+                <mat-slide-toggle labelPosition="before" [checked]="demande?.validation_admin"
                     disabled>Réseau VPN
                 </mat-slide-toggle>
             </mat-list-item>

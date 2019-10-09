@@ -11,9 +11,12 @@ import { FormControl, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   input = {};
 
+  hide:boolean=false;
   username = new FormControl('', [Validators.required])
   password = new FormControl('', [Validators.required])
   credentials: boolean;
+  input_username:string;
+  input_password:string;
 
   @ViewChild('alert', { static: false }) alert;
 
@@ -24,18 +27,14 @@ export class LoginComponent implements OnInit {
   }
 
 
-  ngOnInit() {
-    this.input = {
-      username: '',
-      password: ''
-    };
+  ngOnInit() { }
 
-
-  }
+  
   onLogin() {
     if (this.username.valid && this.password.valid) {
-      console.log(this.input);
-      this.authService.login(this.input)
+      let user = {username: this.input_username, password: this.input_password};
+      console.log(user)
+      this.authService.login(user)
         .subscribe(
           async response => {
             console.log(response);

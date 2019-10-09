@@ -9,6 +9,7 @@ import { Credentials } from '../validation-admin/validation-admin.component';
 })
 export class DialogAdminCredentialFormComponent implements OnInit {
 
+  hide:boolean = true;
   constructor(public dialogRef: MatDialogRef<DialogAdminCredentialFormComponent>, @Inject(MAT_DIALOG_DATA) public data: Credentials) { }
 
   ngOnInit() {

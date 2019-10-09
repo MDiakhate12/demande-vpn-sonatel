@@ -13,7 +13,7 @@
                 <div class="mt-20">
                     <mat-form-field appearance="outline" color="warn" class="mat-focused">
                         <mat-label class="ml">Username</mat-label>
-                        <input [formControl]="username" required class="ml" matInput [(ngModel)]="input.username"
+                        <input [formControl]="username" required class="ml" matInput [(ngModel)]="input_username"
                             name="username">
                         <mat-error *ngIf="username.invalid">{{ getRequiredErrorMessage() }}</mat-error>
                     </mat-form-field>
@@ -23,7 +23,7 @@
                     <mat-form-field appearance="outline" color="warn">
                         <mat-label class="ml">Password</mat-label>
                         <input [formControl]="password" required class="ml" matInput [type]="hide ? 'text' :  'password'"
-                            [(ngModel)]="input.password" name="password">
+                            [(ngModel)]="input_password" name="password">
                         <mat-error *ngIf="password.invalid">{{ getRequiredErrorMessage() }}</mat-error>
                         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                             [attr.aria-pressed]="hide">

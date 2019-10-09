@@ -1,34 +1,9 @@
 <div id="app-demande">
     <app-loading *ngIf="loading"></app-loading>
     <app-navbar></app-navbar>
-    <mat-sidenav-container id="demandeForm">
-
-        <mat-sidenav mode="side" [(opened)]="opened">
-            <mat-form-field appearance="fill">
-                <mat-label>ID</mat-label>
-                <input #idDemande name="demandeID" matInput>
-            </mat-form-field>
-            <button (click)="getDemandeWithId(idDemande.value)" mat-fab>GET demande with ID</button>
-            <br>
-            <pre>
-                    {{ demande | json }}
-                </pre>sticky
-
-            <pre>
-                {{ user | json }}
-            </pre>
-
-        </mat-sidenav>
-
-        <mat-sidenav-content>
-            <button mat-icon-button id="menu-btn" (click)="opened=!opened">
-                <mat-icon>menu</mat-icon>
-            </button>
-
-            <div class="container col-sm-12 col-md-6">
-                <app-demande-form (loading)="loading=$event"></app-demande-form>
-            </div>
-
-        </mat-sidenav-content>
-    </mat-sidenav-container>
+    <div id="demandeForm">
+        <div class="container col-sm-12 col-md-6">
+            <app-demande-form (loading)="loading=$event"></app-demande-form>
+        </div>
+    </div>
 </div>
