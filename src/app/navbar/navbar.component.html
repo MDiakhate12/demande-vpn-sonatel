@@ -1,0 +1,44 @@
+<mat-toolbar color="warn" id="navbar" matRipple class="sticky-top">
+    <mat-toolbar-row>
+        <a routerLink="/dashboard">
+            <mat-icon class="example-icon">home</mat-icon>
+            <span class="align">VPN à la demande</span>
+        </a>
+
+        <a routerLink="/dashboard">
+            <mat-icon class="example-icon">dashboard</mat-icon>
+            <span class="align">Dashboard</span>
+        </a>
+
+        <a *ngIf="isSecurite() === false && isAdmin() === false" routerLink="/nouvelle-demande">
+            <mat-icon class="example-icon">post_add</mat-icon>
+            <span class="align">Nouvelle demande</span>
+        </a>
+
+        <span class="example-spacer"></span>
+        
+        <button class="initial" mat-mini-fab>
+            {{ initial | uppercase }}
+        </button>
+        
+        <button mat-button [matMenuTriggerFor]="menu">
+            <mat-icon>dehaze</mat-icon>
+        </button>
+        
+        <mat-menu #menu>
+            <button mat-menu-item routerLink="/profil">
+                <a >
+                    <mat-icon class="example-icon example-icon-menu">person_outline</mat-icon>
+                    <span class="align">Mon Profil</span>
+                </a>
+            </button>
+            <button mat-menu-item (click)="logout()">
+                <a>
+                    <mat-icon class="example-icon example-icon-menu">logout</mat-icon>
+                    <span class="align">Deconnexion</span>
+                </a>
+            </button>
+        </mat-menu>
+
+    </mat-toolbar-row>
+</mat-toolbar>

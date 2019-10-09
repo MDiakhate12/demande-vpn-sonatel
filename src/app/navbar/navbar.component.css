@@ -1,0 +1,38 @@
+.example-icon {
+    padding: 0 14px;
+    font-size: 30px;
+}
+
+.example-icon-menu {
+    color: #f16e00;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+#navbar {
+    background-color: #f16e00;
+    text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.align {
+    margin-top: 9px;
+    margin-left: 23px;
+}
+
+a {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.initial {
+    background-color: white;
+    color: #f16e00;
+}

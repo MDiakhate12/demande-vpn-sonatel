@@ -1,0 +1,59 @@
+mat-form-field {
+    display: block;
+}
+
+form {
+    height: 400px;
+    position: relative;
+    top: 70px;
+    box-shadow: 0 0 25px;
+    padding: 30px;
+    border-radius: 10px;
+}
+.acc_c{
+    font-size: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    color:#f16e00;
+}
+.login-form {
+    max-width: 420px;
+}
+
+.acc_cp{
+ display: block;
+ text-align: center;
+}
+mat-sidenav-container {
+    height: 100%;
+}
+
+#submit {
+    background-color: #f16e00;
+    color: white;
+}
+
+form {
+    opacity: 1;
+}
+
+#menu-btn {
+    position: fixed;
+}
+
+
+.error-message {
+    font-size: 12px;
+    text-align: center;
+}
+
+.animated.flash.alert.alert-danger.error-message.alert-dismissible.fade.show.ng-star-inserted {
+    position: relative;
+    top: 70px;
+}
+
+button.close {
+    height: fit-content!important;
+}
