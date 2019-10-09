@@ -1,8 +1,11 @@
 //Install express server
 const express = require('express');
 const path = require('path');
+var bodyParser = require("body-parser");
+
 
 const app = express();
+app.use(bodyParser.json());
 
 // Serve only the static files form the dist directory
 // Replace the '/dist/<to_your_project_name>'
