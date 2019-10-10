@@ -11,9 +11,14 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  loginURL = "http://localhost:8000/api/login/";
-  logoutURL = "http://localhost:8000/api/logout/";
-  userURL = "http://localhost:8000/api/users/";
+  baseURL = "https://demande-vpn-api.herokuapp.com/api/"
+
+  // loginURL = "http://localhost:8000/api/login/";
+  loginURL = this.baseURL + "login/";
+  // logoutURL = "http://localhost:8000/api/logout/";
+  logoutURL = this.baseURL + "logout/";
+  // userURL = "http://localhost:8000/api/users/";
+  userURL = this.baseURL + "users/";
 
   httpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',

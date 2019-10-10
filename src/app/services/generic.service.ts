@@ -8,7 +8,9 @@ import { AuthService } from './auth.service';
 })
 export class GenericService {
 
-  baseURL = "http://localhost:8000/api/";
+  // baseURL = "http://localhost:8000/api/";
+  baseURL = "https://demande-vpn-api.herokuapp.com/api/"
+
 
   httpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',

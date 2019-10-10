@@ -12,8 +12,13 @@ import { Credentials } from '../validation-admin/validation-admin.component';
 
 export class DemandeService {
 
-    baseURL = "http://127.0.0.1:8000/api/demandes/";
-    apiURL = "http://127.0.0.1:8000/api/";
+    
+    apiURL = "https://demande-vpn-api.herokuapp.com/api/"
+
+    baseURL = this.apiURL + "demandes/";
+
+
+    // apiURL = "http://127.0.0.1:8000/api/";
     httpHeaders = new HttpHeaders({
         'Content-Type': 'application/json',
         'Authorization': 'Token ' + this.authService.getToken()
