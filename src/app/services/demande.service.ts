@@ -37,9 +37,7 @@ export class DemandeService {
     }
 
     sendDemande(demande): Observable<HttpResponse<Demande>> {
-        // let url = this.baseURL + "create/";
-        let url = "http://127.0.0.1:8000/api/demandes/create/";
-        
+        let url = this.baseURL + "create/";
         return this.http.post<Demande>(url, demande, { headers: this.httpHeaders, observe: 'response' });
     }
 
