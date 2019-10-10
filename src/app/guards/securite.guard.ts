@@ -15,7 +15,7 @@ export class SecuriteGuard implements CanActivate {
   }
 
   checkRole() {
-    if(this.authService.isSecurite() === 'true') {
+    if(this.authService.isSecurite() === true) {
       return true;  
     }
     this.router.navigate(['/dashboard']);
