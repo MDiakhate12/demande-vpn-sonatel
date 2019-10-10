@@ -15,10 +15,10 @@ import { ActivatedRoute } from '@angular/router';
 
 export class DemandeValidationDetailComponent implements OnInit {
 
-  users: User[] = [];;
-  protocoles: Protocole[] = [];;
-  applications: Application[] = [];;
-  demande: Demande = new Demande();
+  users: User[] = []
+  protocoles: Protocole[] = []
+  applications: Application[] = []
+  demande: Demande = new Demande()
   progress: number = 0;
   statuses = this.demandeService.STATUS;
   checked = false;

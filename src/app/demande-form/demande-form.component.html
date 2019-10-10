@@ -5,7 +5,7 @@
     <mat-form-field appearance="fill">
         <mat-label>Objet</mat-label>
         <input required [formControl]="objet" [(ngModel)]="demande.objet" name="objet" matInput>
-      <mat-error *ngIf="valid == false">{{getErrorMessage()}}</mat-error>
+      <mat-error *ngIf="valid === false">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -15,7 +15,7 @@
                 {{user.username}}
             </mat-option>
         </mat-select>
-      <mat-error *ngIf="valid == false">{{getErrorMessage()}}</mat-error>
+      <mat-error *ngIf="valid === false">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
 
 
@@ -25,7 +25,7 @@
         <input required [formControl]="date_expiration"  [(ngModel)]="demande.date_expiration" name="date_expiration" matInput [matDatepicker]="picker1">
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
-      <mat-error *ngIf="valid == false">{{getErrorMessage()}}</mat-error>
+      <mat-error *ngIf="valid === false">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -35,7 +35,7 @@
                 {{ application.nom }} ({{ application.adresse_ip }})
             </mat-option>
         </mat-select>
-      <mat-error *ngIf="valid == false">{{getErrorMessage()}}</mat-error>
+      <mat-error *ngIf="valid === false">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -45,7 +45,7 @@
                 {{protocole.nom}}
             </mat-option>
         </mat-select>
-      <mat-error *ngIf="valid == false">{{getErrorMessage()}}</mat-error>
+      <mat-error *ngIf="valid === false">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">

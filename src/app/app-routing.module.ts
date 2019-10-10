@@ -15,11 +15,8 @@ import { HierarchieGuard } from './guards/hierarchie.guard';
 import { HistoriqueComponent } from './historique/historique.component';
 import { HistoriqueSecuriteComponent } from './historique-securite/historique-securite.component';
 
-const routes: Routes = [
-  // {path: '', component: DashboardComponent, pathMatch: 'full'},
-  
+const routes: Routes = [  
   {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
-
   {path: 'nouvelle-demande', component: DemandeComponent, canActivate: [AuthGuard]},
   {path: 'demande/:id', component: DemandeDetailComponent, canActivate: [AuthGuard]},
   {path: 'validation-hierarchique/:username', component:  ValidationHierarchiqueComponent, canActivate: [AuthGuard, HierarchieGuard]},
@@ -27,11 +24,8 @@ const routes: Routes = [
   {path: 'validation-admin', component:  ValidationAdminComponent, canActivate: [AuthGuard, AdminGuard]},
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
-  // {path: 'demandes/:username', component: LoginComponent},
   {path: 'demandes/en-attente/:username', component: DemandeEnAttenteUserComponent, canActivate: [AuthGuard]},
-
   {path: 'demandes/historique-securite', component: HistoriqueSecuriteComponent, canActivate: [AuthGuard, SecuriteGuard]},
-  
   {path: 'demandes/historique/:username', component: HistoriqueComponent, canActivate: [AuthGuard]},
 ];
 

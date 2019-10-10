@@ -101,7 +101,7 @@ export class DemandeFormComponent implements OnInit {
   onSubmit(demande) {
     this.validations.forEach(
       validation => {
-        if (validation.valid == false) {
+        if (validation.valid === false) {
           return this.valid = false;
         }
         return this.valid = true

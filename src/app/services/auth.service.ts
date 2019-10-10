@@ -66,12 +66,12 @@ export class AuthService {
 
   isSecurite() {
     let role = localStorage.getItem('is_securite');
-    return true ? role === 'true' : false;
+    return role;
   }
 
   isAdmin() {
     let role = localStorage.getItem('is_admin');
-    return true ? role === 'true' : false;
+    return role;
   }
 
 

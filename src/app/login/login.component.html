@@ -2,7 +2,7 @@
     <div class="row">
         <div class="form-container col-sm-12 offset-md-4 col-md-4 p-5">
             <div #alert class="error-message animated flash alert alert-danger alert-dismissible fade show" role="alert"
-                *ngIf="credentials == false">
+                *ngIf="credentials === false">
                 <strong>{{ getCredentialsErrorMessage() }}</strong>
             </div>
             <form action="" class="login-form" method="post">

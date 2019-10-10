@@ -25,12 +25,21 @@ export class ValidationAdminComponent implements OnInit {
   panelOpenState = true;
   step = 0;
 
-  users: User[] = [];;
-  protocoles: Protocole[] = [];;
-  applications: Application[] = [];;
-  demandes: Demande[] = new Array<Demande>();
-  username: string;
-  loading:boolean = false;
+  users: User[] = new Array<User>()
+  
+  motif: string= ''
+
+  protocoles: Protocole[] = new Array<Protocole>()
+  
+  applications: Application[] = new Array<Application>()
+
+  demandes: Demande[] = new Array<Demande>()
+  
+  username: string
+  
+  user: User = new User()
+  
+  loading: boolean = false
 
   vpnUsername:string;
   vpnPassword:string;

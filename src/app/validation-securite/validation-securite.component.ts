@@ -22,15 +22,21 @@ export class ValidationSecuriteComponent implements OnInit {
   panelOpenState = true;
   step = 0;
 
-  users: User[] = [];
-  motif: string= '';
-;
-  protocoles: Protocole[] = [];;
-  applications: Application[] = [];;
-  demandes: Demande[] = new Array<Demande>();
-  username: string;
-  user: User = new User();
-  loading: boolean = false;
+  users: User[] = new Array<User>()
+  
+  motif: string= ''
+
+  protocoles: Protocole[] = new Array<Protocole>()
+  
+  applications: Application[] = new Array<Application>()
+
+  demandes: Demande[] = new Array<Demande>()
+  
+  username: string
+  
+  user: User = new User()
+  
+  loading: boolean = false
 
   constructor(private demandeService: DemandeService, private genericService: GenericService, private router: ActivatedRoute, public dialog: MatDialog, public snackbar: MatSnackBar) { }
 

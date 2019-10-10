@@ -29,7 +29,7 @@
                 <h4 mat-line>Validateur hierarchique : {{ demande?.validateur_hierarchique?.username }}</h4>
             </mat-list-item>
 
-            <mat-list-item *ngIf="demande?.validation_securite == true">
+            <mat-list-item *ngIf="demande?.validation_securite === true">
                 <mat-icon color="warn" mat-list-icon>account_box</mat-icon>
                 <h4 mat-line>Validateur sécurité : {{ demande?.validateur_securite?.user.username }}</h4>
             </mat-list-item>
