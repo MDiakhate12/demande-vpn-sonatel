@@ -8,7 +8,6 @@ import { AuthService } from '../services/auth.service';
 import { DialogComponent } from '../dialog/dialog.component';
 import { MatDialog, MatSnackBar, MatDialogRef } from '@angular/material';
 import { DemandeDetailComponent } from '../demande-detail/demande-detail.component';
-import { FormControl, Validators } from '@angular/forms';
 import { Application } from '../models/application.model';
 import { Protocole } from '../models/protocole.model';
 
@@ -33,22 +32,9 @@ export class DemandeFormComponent implements OnInit {
   applications: Application[] = new Array<Application>();
   protocoles: Protocole[] = new Array<Protocole>();
 
-  objet = new FormControl('', Validators.required);
-  beneficiaire = new FormControl('', Validators.required);
-  date_expiration = new FormControl('', Validators.required);
-  applis = new FormControl('', Validators.required);
-  protos = new FormControl('', Validators.required);
   benef: number;
   apps: number[] = [];
   prots: number[] = [];
-
-  validations = [
-    this.objet,
-    this.beneficiaire,
-    this.date_expiration,
-    this.applis,
-    this.protos,
-  ]
 
   valid: boolean = false;
 
@@ -98,28 +84,21 @@ export class DemandeFormComponent implements OnInit {
 
   }
 
-  onSubmit(demande) {
-    this.validations.forEach(
-      validation => {
-        if (validation.valid === false) {
-          return this.valid = false;
-        }
-        return this.valid = true
-      }
-    )
+  async onSubmit(demandeForm) {
+    
+    console.log(demandeForm)
+    console.log(demandeForm.valid)
+    console.log(demandeForm.value.description)
+    console.log(this.demande)
 
-    if (this.valid) {
+    if (demandeForm.valid === true) {
       if (this.id) {
-        console.log(demande)
-
         console.log("FROM SUBMIT WITH ID", this.id)
-        this.updateDemande(demande)
-      } else {
+        this.updateDemande(this.demande)
+      } 
+      else {
         this.loading.emit(true);
-        let demande = this.demande as any;
-        demande.beneficiaire = this.benef;
-        demande.applications = this.apps;
-        demande.protocoles = this.prots;
+        let demande = demandeForm.value;
         this.demandeService.sendDemande(demande).subscribe(
           response => {
             this.demande = response.body;
