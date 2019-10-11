@@ -9,7 +9,9 @@ const app = express();
 app.use(express.static(__dirname + '/dist/Frontend'));
 
 app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, '/dist/Frontend/index.html'));
+  res
+  .status(200)
+  .sendFile(path.join(__dirname, '/dist/Frontend/index.html'));
 });
 
 
